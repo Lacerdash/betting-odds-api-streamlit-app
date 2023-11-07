@@ -6,11 +6,24 @@ from io import StringIO
 def convert_csv(df):
     return df.to_csv(index=False, encoding='utf-8')
 
-def succes_message():
-    succes = st.success('Arquivo baixado com sucesso!', icon = "✅")
+def success_message():
+    succes = st.success('Download started!', icon = "✅")
     time.sleep(5)
     succes.empty()
     return
+
+# Function to convert DataFrame to CSV
+def convert_df_to_csv(df):
+    if df is not None:
+        # Create a string buffer
+        buffer = StringIO()
+        # Write the DataFrame as a CSV to the buffer
+        df.to_csv(buffer, index=False)
+        # Seek to the start of the string buffer
+        buffer.seek(0)
+        # Return the buffer value
+        return buffer.getvalue()
+    return None
 
 config = load_config()
 
@@ -40,27 +53,6 @@ with tab1:
         st.dataframe(sport_df)
     with col2:
         sports_list = st.multiselect('Select the sports you would like to search for opportunities', sport_df.key.unique(), SPORT_LIST)
-
-import streamlit as st
-import pandas as pd
-from io import StringIO
-
-# Function to convert DataFrame to CSV
-def convert_df_to_csv(df):
-    if df is not None:
-        # Create a string buffer
-        buffer = StringIO()
-        # Write the DataFrame as a CSV to the buffer
-        df.to_csv(buffer, index=False)
-        # Seek to the start of the string buffer
-        buffer.seek(0)
-        # Return the buffer value
-        return buffer.getvalue()
-    return None
-
-# Function that is called when the download button is clicked
-def success_message():
-    st.success("Download started!")
 
 # Initialize session state for the DataFrames
 if 'df_odds' not in st.session_state:
