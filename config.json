@@ -1,0 +1,28 @@
+{
+    "API_ENDPOINT": "https://api.the-odds-api.com/v4/sports",
+    "DISCOUNT_RATE": 0.15,
+    "EXCHANGE_COMMISSION": 0.035,
+    "API_KEY": "e12773d1e5aa151c53eb580bacc4ffd2",
+    "REGIONS": "eu",
+    "MARKETS": "h2h",
+    "ODDS_FORMAT": "decimal",
+    "DATE_FORMAT": "iso",
+    "SPORT_LIST": [
+        "soccer_spain_la_liga",
+        "soccer_spain_segunda_division",
+        "soccer_italy_serie_a",
+        "soccer_italy_serie_b",
+        "soccer_germany_bundesliga",
+        "soccer_germany_bundesliga2",
+        "soccer_france_ligue_one",
+        "soccer_france_ligue_two",
+        "soccer_brazil_campeonato",
+        "soccer_brazil_serie_b",
+        "soccer_sweden_allsvenskan",
+        "soccer_norway_eliteserien",
+        "soccer_usa_mls",
+        "soccer_portugal_primeira_liga",
+        "soccer_mexico_ligamx",
+        "soccer_uefa_nations_league"
+    ]
+}
